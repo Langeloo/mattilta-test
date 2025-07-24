@@ -1,6 +1,6 @@
 # Mattilda API
 
-School API es una aplicación construida con FastAPI para gestionar colegios, estudiantes y facturas.
+Mattilda API es una aplicación construida con FastAPI para gestionar colegios, estudiantes y facturas.
 
 ## Requisitos
 
