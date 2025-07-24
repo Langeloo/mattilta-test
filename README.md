@@ -41,6 +41,7 @@ Desde alli podra hacer peticiones a la API, ver los esquemas de los modelos y pr
 
 ## Estructura del proyecto
 
+```
 mattilda-test/
 ├── app/
 │   ├── main.py
@@ -55,6 +56,7 @@ mattilda-test/
 ├── requirements.txt
 ├── Makefile
 └── README.md
+```
 
 ## Activación manual del entorno (opcional)
 
