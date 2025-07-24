@@ -1,0 +1,35 @@
+# Entorno virtual
+venv/
+.env
+*.env
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Archivos de bases de datos locales
+*.db
+*.sqlite3
+
+# Archivos de logs
+*.log
+
+# Configuración de VSCode y otros editores
+.vscode/
+.idea/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de pruebas o caché de pip
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Docker (si lo usas)
+*.pid
+*.tar
