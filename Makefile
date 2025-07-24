@@ -14,4 +14,24 @@ init_env: ## Initialize the environment
 run_all: ## Run the application
 	@echo "Running the application..."
 	$(MAKE) init_env
-	source venv/bin/activate && uvicorn app.main:app --reload
+	@echo "Iniciando servidor en background..."
+	nohup venv/bin/uvicorn app.main:app --reload > uvicorn.log 2>&1 &
+
+	@sleep 2
+	@echo "Abriendo Swagger UI (/docs) y ReDoc (/redoc)..."
+	@if command -v xdg-open >/dev/null 2>&1; then \
+		xdg-open http://localhost:8000/docs; \
+		xdg-open http://localhost:8000/redoc; \
+	elif command -v open >/dev/null 2>&1; then \
+		open http://localhost:8000/docs; \
+		open http://localhost:8000/redoc; \
+	else \
+		echo "Servidor iniciado en http://localhost:8000"; \
+		echo "Abre manualmente las URLs /docs y /redoc"; \
+	fi
+
+clear: ## Clear the environment
+	@echo "Clearing the environment..."
+	rm -rf venv
+	rm -rf __pycache__
+	find . -name "*.pyc" -exec rm -f {} \;
